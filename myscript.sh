@@ -1,5 +1,7 @@
 #!/bin/bash
 
+ml icc
+
 # Виконуємо компіляцію програми
 icc myprogram.cpp -o myprogram
 

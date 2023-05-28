@@ -18,7 +18,7 @@ for opt in "${optimizations[@]}"; do
     # Вимірюємо час роботи оптимізованої програми
     echo "Вимірюємо час роботи програми з оптимізацією -${opt}:"
     time for ((i=0; i<1000; i++)); do
-        ./program_opt${opt} >/dev/null
+        ./program_opt${opt}
     done
 done
 
@@ -34,6 +34,6 @@ for flag in $flags; do
     # Вимірюємо час роботи оптимізованої програми
     echo "Вимірюємо час роботи програми з оптимізацією $flag:"
     time for ((i=0; i<1000; i++)); do
-        ./program_opt_$flag >/dev/null
+        ./program_opt_$flag
     done
 done

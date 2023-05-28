@@ -32,7 +32,7 @@ lscpu | grep Flags
 for flag in sse2 sse3 ssse3 sse4.1 sse4.2 avx ATOM_SSE4.2 ATOM_SSSE3 SANDYBRIDGE SILVERMONT
 do
     # Компілюємо з оптимізацією
-    icc -$flag myprogram.cpp -o myprogram_opt_$flag
+    icc -x$flag myprogram.cpp -o myprogram_opt_$flag
 
     # Вимірюємо час роботи оптимізованої програми
     echo "Вимірюємо час роботи програми з оптимізацією $flag:"

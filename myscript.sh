@@ -15,12 +15,12 @@ done
 optimizations=("O1" "O2" "O3")
 for opt in "${optimizations[@]}"; do
     # Компілюємо з оптимізацією
-    icc -${opt} program.cpp -o program_opt${opt}
+    icc -${opt} myprogram.cpp -o myprogram_opt${opt}
 
     # Вимірюємо час роботи оптимізованої програми
     echo "Вимірюємо час роботи програми з оптимізацією -${opt}:"
     time for ((i=0; i<1000; i++)); do
-        ./program_opt${opt}
+        ./myprogram_opt${opt}
     done
 done
 
@@ -31,11 +31,11 @@ flags=$(cat /proc/cpuinfo | grep flags | uniq | cut -d ":" -f 2)
 # Компілюємо окремі варіанти оптимізованої програми для кожного розширення
 for flag in $flags; do
     # Компілюємо з оптимізацією
-    icc -$flag program.cpp -o program_opt_$flag
+    icc -$flag myprogram.cpp -o myprogram_opt_$flag
 
     # Вимірюємо час роботи оптимізованої програми
     echo "Вимірюємо час роботи програми з оптимізацією $flag:"
     time for ((i=0; i<1000; i++)); do
-        ./program_opt_$flag
+        ./myprogram_opt_$flag
     done
 done

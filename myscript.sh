@@ -29,7 +29,7 @@ echo "Перелік розширень процесору:"
 lscpu | grep Flags
 
 # Компілюємо окремі варіанти оптимізованої програми для розширень
-for flag in sse2 sse3 ssse3 sse4.1 sse4.2 avx ATOM_SSE4.2 ATOM_SSSE3 SANDYBRIDGE SILVERMONT
+for flag in sse2 sse3 ssse3 sse4.1 sse4.2 avx ATOM_SSE4.2 ATOM_SSSE3
 do
     # Компілюємо з оптимізацією
     icc -x$flag myprogram.cpp -o myprogram_opt_$flag

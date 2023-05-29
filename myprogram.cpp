@@ -1,5 +1,4 @@
 #include <iostream>
-#include <chrono>
 
 const int ARRAY_SIZE = 10000000;
 
